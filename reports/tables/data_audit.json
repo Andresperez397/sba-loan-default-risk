@@ -241,160 +241,157 @@
     "loans_in_window": 588049,
     "cancelled_or_undisbursed": 72622,
     "missing_numeric_dropped": 0,
-    "analysis_loans": 515427
+    "implausible_rate_dropped": 443,
+    "analysis_loans": 514984
   },
   "by_fy": {
     "2010": {
-      "loans": 39913,
+      "loans": 39903,
       "default5": 0.0497,
       "ever_charged_off": 0.092,
-      "interest_rate": 6.4515,
+      "interest_rate": 6.4527,
       "median_amount": 100000.0
     },
     "2011": {
-      "loans": 45628,
+      "loans": 45621,
       "default5": 0.037,
-      "ever_charged_off": 0.0689,
-      "interest_rate": 6.2989,
-      "median_amount": 123350.0
+      "ever_charged_off": 0.069,
+      "interest_rate": 6.2996,
+      "median_amount": 123300.0
     },
     "2012": {
-      "loans": 38889,
+      "loans": 38883,
       "default5": 0.033,
       "ever_charged_off": 0.0627,
-      "interest_rate": 6.2316,
+      "interest_rate": 6.2323,
       "median_amount": 110000.0
     },
     "2013": {
-      "loans": 40416,
+      "loans": 40399,
       "default5": 0.0311,
       "ever_charged_off": 0.0599,
-      "interest_rate": 6.1142,
+      "interest_rate": 6.116,
       "median_amount": 144000.0
     },
     "2014": {
-      "loans": 45962,
+      "loans": 45889,
       "default5": 0.0356,
-      "ever_charged_off": 0.064,
-      "interest_rate": 6.0369,
-      "median_amount": 116050.0
+      "ever_charged_off": 0.0641,
+      "interest_rate": 6.044,
+      "median_amount": 115700.0
     },
     "2015": {
-      "loans": 55421,
-      "default5": 0.039,
+      "loans": 55357,
+      "default5": 0.0391,
       "ever_charged_off": 0.0685,
-      "interest_rate": 6.1192,
-      "median_amount": 113500.0
+      "interest_rate": 6.1244,
+      "median_amount": 113200.0
     },
     "2016": {
-      "loans": 56789,
-      "default5": 0.0389,
+      "loans": 56736,
+      "default5": 0.039,
       "ever_charged_off": 0.0718,
-      "interest_rate": 6.2704,
+      "interest_rate": 6.2748,
       "median_amount": 124000.0
     },
     "2017": {
-      "loans": 56079,
+      "loans": 56059,
       "default5": 0.0437,
       "ever_charged_off": 0.0772,
-      "interest_rate": 6.6241,
+      "interest_rate": 6.626,
       "median_amount": 147000.0
     },
     "2018": {
-      "loans": 54195,
+      "loans": 54168,
       "default5": 0.047,
       "ever_charged_off": 0.0789,
-      "interest_rate": 7.2911,
+      "interest_rate": 7.2941,
       "median_amount": 125000.0
     },
     "2019": {
-      "loans": 45671,
+      "loans": 45601,
       "default5": 0.0396,
-      "ever_charged_off": 0.0669,
-      "interest_rate": 7.909,
+      "ever_charged_off": 0.067,
+      "interest_rate": 7.9183,
       "median_amount": 150000.0
     },
     "2020": {
-      "loans": 36464,
+      "loans": 36368,
       "default5": 0.0263,
       "ever_charged_off": 0.0401,
-      "interest_rate": 6.4577,
+      "interest_rate": 6.4713,
       "median_amount": 200000.0
     }
   },
   "categorical_levels": {
     "sector": {
-      "72": 67290,
-      "23": 54554,
-      "44": 51098,
-      "54": 50515,
-      "62": 47876,
-      "81": 46111,
-      "42": 26802,
-      "48": 25828,
-      "56": 24180,
-      "33": 20341,
-      "45": 19320,
-      "71": 15170,
-      "53": 11390,
-      "31": 10712,
-      "32": 9493,
-      "52": 9050,
-      "11": 8262,
-      "61": 7161,
-      "51": 6029,
-      "49": 1924,
+      "72": 67234,
+      "23": 54499,
+      "44": 51055,
+      "54": 50472,
+      "62": 47834,
+      "81": 46062,
+      "42": 26770,
+      "48": 25813,
+      "56": 24162,
+      "33": 20320,
+      "45": 19307,
+      "71": 15157,
+      "53": 11382,
+      "31": 10705,
+      "32": 9484,
+      "52": 9042,
+      "11": 8258,
+      "61": 7157,
+      "51": 6028,
+      "49": 1923,
       "21": 1442,
-      "22": 460,
+      "22": 459,
       "55": 329,
       "92": 88,
       "unknown": 2
     },
     "business_type": {
-      "corporation": 452050,
-      "individual": 53809,
-      "partnership": 9548,
+      "corporation": 451662,
+      "individual": 53760,
+      "partnership": 9542,
       "unknown": 20
     },
     "business_age": {
-      "existing": 341292,
-      "startup": 77918,
-      "under_2y": 48702,
-      "unanswered": 47515
+      "existing": 340977,
+      "startup": 77854,
+      "under_2y": 48676,
+      "unanswered": 47477
     },
     "processing": {
-      "express": 245759,
-      "preferred_lender": 170254,
-      "pilot_initiative": 48101,
-      "general": 43241,
-      "working_capital_trade": 7973,
+      "express": 245579,
+      "preferred_lender": 170034,
+      "pilot_initiative": 48068,
+      "general": 43238,
+      "working_capital_trade": 7966,
       "other": 99
     },
     "fixed_rate": {
-      "0": 403170,
-      "1": 112257
+      "0": 402832,
+      "1": 112152
     },
     "revolver": {
-      "0": 362773,
-      "1": 152654
+      "0": 362429,
+      "1": 152555
     },
     "collateral": {
-      "1": 375032,
-      "0": 140395
+      "1": 374624,
+      "0": 140360
     },
     "franchise": {
-      "0": 467875,
-      "1": 47552
-    },
-    "real_estate_term": {
-      "0": 434847,
-      "1": 80580
+      "0": 467473,
+      "1": 47511
     }
   },
   "numeric_ranges": {
     "log_amount": {
       "min": 6.9078,
-      "50%": 11.783,
+      "50%": 11.7822,
       "max": 15.4249
     },
     "guarantee_share": {
@@ -403,14 +400,9 @@
       "max": 1.0
     },
     "interest_rate": {
-      "min": 0.0,
+      "min": 2.0,
       "50%": 6.0,
       "max": 13.5
-    },
-    "term_months": {
-      "min": 0.0,
-      "50%": 88.0,
-      "max": 432.0
     },
     "jobs": {
       "min": 0.0,
@@ -422,6 +414,31 @@
       "50%": 1.7918,
       "max": 7.6737
     }
+  },
+  "term_standard_share": {
+    "default5": 0.02592333099789811,
+    "no_default5": 0.738518228209179
+  },
+  "term_under_1_month": {
+    "loans": 236,
+    "charged_off_share": 0.7203389830508474
+  },
+  "single_input_auc_fy2010_2012": {
+    "log_amount": 0.65,
+    "guarantee_share": 0.597,
+    "interest_rate": 0.648,
+    "jobs": 0.562,
+    "log_jobs": 0.562,
+    "sector": 0.581,
+    "state": 0.57,
+    "business_type": 0.52,
+    "business_age": 0.543,
+    "processing": 0.63,
+    "fixed_rate": 0.518,
+    "revolver": 0.504,
+    "collateral": 0.586,
+    "franchise": 0.502,
+    "term_months": 0.861
   },
   "never_read": [
     "BorrName",

@@ -60,7 +60,7 @@ So `default5` measures **early charge-off**, not every loss, and the README says
 
 | Group | Fields |
 |---|---|
-| Loan terms | amount (log), SBA guarantee share, initial interest rate, fixed or variable, term in months, 20+ year term (real estate), revolving line, collateral |
+| Loan terms | amount (log), SBA guarantee share, initial interest rate, fixed or variable, revolving line, collateral (term was dropped; see the last section) |
 | Business | 2-digit NAICS sector, project state, business type (corporation, individual, partnership), business age, franchise, jobs supported (self-reported, log) |
 | Program | processing method, grouped into express, preferred lender, general, pilot initiatives, working capital/trade |
 
@@ -86,3 +86,16 @@ So `default5` measures **early charge-off**, not every loss, and the README says
 1. **Outcome-related fields** (status, dates, charge-off amount, sale flag, current bank) are never inputs. A test enforces this.
 2. **Look-ahead in outcomes.** A lender deciding in fiscal year *s* knows five-year outcomes only for loans approved by *s*−5. The validation design respects that: a test cohort is scored only by a model trained on cohorts at least five years older.
 3. **Random splits** would mix cohorts that went through different economies. Validation is by approval cohort.
+
+## Loan term is overwritten for loans that went bad (found 2026-10-04, after the plan froze)
+
+The first pipeline check gave implausibly high accuracy, and the cause was the term field. It is the contractual term for loans that performed, but SBA overwrites it for loans that went bad.
+
+| Group | Share with a standard term (60, 84, 120, 240, 300 months) |
+|---|---|
+| Charged off within 5 years | 2.6% |
+| Not charged off within 5 years | 73.9% |
+
+Charged-off loans instead show terms like 67, 68 or 73 months, and 72% of loans with a term under one month were charged off. On its own, term separates defaults with an AUC of 0.86, against at most 0.65 for any other input.
+
+Because term is not known at approval in the form the data records it, term and the real-estate flag built from it are not inputs. The other inputs were screened the same way, and none shows the pattern: approved amounts and guarantee shares cluster at the same round values for defaults and non-defaults. See `DEVIATIONS.md`.

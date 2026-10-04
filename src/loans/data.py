@@ -32,9 +32,11 @@ NEVER_READ = ["BorrName", "BorrStreet", "PaidInFullDate", "FirstDisbursementDate
               "BankName", "BankFDICNumber", "BankNCUANumber", "BankStreet", "BankCity", "BankState",
               "BankZip", "LocationID"]
 
-NUMERIC = ["log_amount", "guarantee_share", "interest_rate", "term_months", "jobs", "log_jobs"]
+# term_months is loaded only for the audit: SBA overwrites the term of loans that went bad (DEVIATIONS.md).
+NUMERIC = ["log_amount", "guarantee_share", "interest_rate", "jobs", "log_jobs"]
 CATEGORICAL = ["sector", "state", "business_type", "business_age", "processing", "fixed_rate", "revolver",
-               "collateral", "franchise", "real_estate_term"]
+               "collateral", "franchise"]
+LEAKY_INPUTS = ["term_months", "real_estate_term"]
 FEATURES = NUMERIC + CATEGORICAL
 
 
@@ -109,9 +111,15 @@ def load(first_fy: int = FIRST_FY, last_fy: int = LAST_FY) -> tuple[pd.DataFrame
     d["franchise"] = d["FranchiseCode"].notna().astype(int).astype(str)
     # Terms of 20 years or more are real-estate loans.
     d["real_estate_term"] = (d["term_months"] >= 240).astype(int).astype(str)
-    bad = d[NUMERIC].isna().any(axis=1)
+    bad = d[NUMERIC + ["term_months"]].isna().any(axis=1)
     log["missing_numeric_dropped"] = int(bad.sum())
     d = d[~bad]
+    # Entry errors (ANALYSIS_PLAN.md): initial rate under 2%. The planned term rule was dropped because
+    # zero terms are overwrites on charged-off loans, not entry errors (DEVIATIONS.md).
+    implausible = d["interest_rate"] < 2
+    log["implausible_rate_dropped"] = int(implausible.sum())
+    d = d[~implausible]
     log["analysis_loans"] = len(d)
-    keep = ["fy", "approval_date", "amount", "default5", "charged_off", "chargeoff_amount"] + FEATURES
+    keep = ["fy", "approval_date", "amount", "default5", "charged_off", "chargeoff_amount",
+            "term_months"] + FEATURES
     return d[keep].reset_index(drop=True), log

@@ -10,7 +10,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from loans import data  # noqa: E402
+from loans import data, metrics  # noqa: E402
 
 con = duckdb.connect()
 con.execute(f"""CREATE TABLE l AS SELECT ApprovalFY, ApprovalDate, LoanStatus, ChargeOffDate,
@@ -51,6 +51,22 @@ out["by_fy"] = d.groupby("fy").agg(
 ).round(4).to_dict(orient="index")
 out["categorical_levels"] = {c: d[c].value_counts().to_dict() for c in data.CATEGORICAL if c != "state"}
 out["numeric_ranges"] = d[data.NUMERIC].describe().T[["min", "50%", "max"]].round(4).to_dict(orient="index")
+# Term is overwritten for loans that went bad (found after the plan froze; DEVIATIONS.md).
+std = d["term_months"].isin([60, 84, 120, 240, 300])
+out["term_standard_share"] = {"default5": float(std[d["default5"] == 1].mean()),
+                              "no_default5": float(std[d["default5"] == 0].mean())}
+zero = q("""select avg((replace(LoanStatus,' ','')='CHGOFF')::int) v, count(*) n from read_csv(
+            '""" + str(data.RAW) + """/FOIA_7a_*.csv', header=true, all_varchar=true, union_by_name=true)
+            where ApprovalFY::int between 2010 and 2020
+            and replace(LoanStatus,' ','') not in ('CANCLD','COMMIT') and TermInMonths::double < 1""")
+out["term_under_1_month"] = {"loans": int(zero["n"][0]), "charged_off_share": float(zero["v"][0])}
+single = {}
+early = d[d["fy"] <= 2012]
+for col in data.FEATURES + ["term_months"]:
+    b = pd.qcut(early[col].rank(method="first"), 20, labels=False) if col in data.NUMERIC + ["term_months"] \
+        else early[col]
+    single[col] = round(metrics.auc(early["default5"], early.groupby(b)["default5"].transform("mean")), 3)
+out["single_input_auc_fy2010_2012"] = single
 out["never_read"] = data.NEVER_READ
 out["outcome_fields_never_inputs"] = data.OUTCOME_FIELDS
 assert not set(data.FEATURES) & set(data.OUTCOME_FIELDS + data.NEVER_READ)
@@ -58,7 +74,8 @@ assert not set(data.FEATURES) & set(data.OUTCOME_FIELDS + data.NEVER_READ)
 (ROOT / "reports" / "tables").mkdir(parents=True, exist_ok=True)
 with open(ROOT / "reports" / "tables" / "data_audit.json", "w") as f:
     json.dump(out, f, indent=2, default=str)
-for k in ("all_loans_fy2000_on", "status_counts", "load_log", "chargeoff_amount_over_approval_median"):
+for k in ("all_loans_fy2000_on", "status_counts", "load_log", "chargeoff_amount_over_approval_median",
+          "term_standard_share", "term_under_1_month", "single_input_auc_fy2010_2012"):
     print(k, out[k])
 print(pd.DataFrame(out["by_fy"]).T)
 print(pd.DataFrame(out["chargeoff_timing_by_fy"]).T.tail(12))
