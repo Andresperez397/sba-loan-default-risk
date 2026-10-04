@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Small-Business Loan Default: Project Summary</title>
+<style>
+  @page { size: Letter; margin: 0.55in 0.6in; }
+  :root { --ink:#0b0b0b; --ink2:#52514e; --rule:#e4e3df; --accent:#1f6f5c; }
+  body { font: 10.1pt/1.42 "Helvetica Neue", Arial, sans-serif; color: var(--ink); margin: 0; background:#fff; }
+  h1 { font-size: 17pt; margin: 0 0 2px; letter-spacing: -0.2px; }
+  .sub { color: var(--ink2); margin: 0 0 10px; }
+  h2 { font-size: 11pt; margin: 13px 0 4px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.6px; }
+  p { margin: 4px 0 6px; }
+  .meta { display:flex; flex-wrap:wrap; gap:4px 18px; font-size:9pt; color:var(--ink2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:5px 0; margin-bottom:8px; }
+  .meta a, .foot a { color: inherit; text-decoration: none; }
+  .grid { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  ul { margin: 4px 0 6px 16px; padding: 0; } li { margin: 2px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 9pt; margin: 4px 0; }
+  th, td { text-align: left; padding: 3px 6px; border-bottom: 1px solid var(--rule); }
+  th { color: var(--ink2); font-weight: 600; } td.n { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.best td { font-weight: 700; }
+  img { width: 100%; display:block; }
+  .cap { font-size: 8.5pt; color: var(--ink2); margin-top: 2px; }
+  .pb { page-break-before: always; }
+  .foot { font-size: 8.3pt; color: var(--ink2); border-top:1px solid var(--rule); margin-top:10px; padding-top:5px; }
+</style></head><body>
+
+<h1>Small-business loan default: a scorecard tested the way a lender would use it</h1>
+<p class="sub">Predicting early charge-off of SBA 7(a) loans approved after the model was built, benchmarked against the lender's own price for risk, with the checks a model-risk team runs.</p>
+<div class="meta"><span><b>Andres Perez</b></span><span>Python · DuckDB · scikit-learn · R Shiny</span><span>Code: <a href="https://github.com/Andresperez397/sba-loan-default-risk">github.com/Andresperez397/sba-loan-default-risk</a></span><!--APP--></div>
+
+<div class="grid">
+<div>
+<h2>Data</h2>
+<p>514,984 disbursed SBA 7(a) loans approved FY2010–FY2020 (SBA loan-level FOIA data, public domain). The outcome is a charge-off within five years of approval. Test cohorts FY2015–FY2020 (304,289 loans) are each scored by a model trained only on loans five or more years older, matching what a lender could have known.</p>
+<h2>Approach</h2>
+<ul>
+<li><b>Audit, then a frozen plan;</b> borrower names and addresses never read.</li>
+<li><b>Leak caught:</b> SBA overwrites the term of loans that went bad (AUC 0.86 on its own), so term was removed.</li>
+<li><b>Models:</b> weight-of-evidence scorecard (points, reason codes) against gradient boosting and an interest-rate baseline.</li>
+<li><b>Policy and model risk:</b> approval trade-offs in dollars, stability (PSI), calibration and segments.</li>
+</ul>
+</div>
+<div>
+<h2>Findings</h2>
+<ul>
+<li><b>The scorecard beats boosting out of time</b> (AUC 0.684 against 0.677), even though boosting won in-time cross-validation.</li>
+<li><b>The edge over pricing is modest:</b> +0.052 AUC against the absolute rate, but most of that was the prime rate rising. Against the rate's spread over prime, +0.010 (exploratory).</li>
+<li><b>Policy:</b> the scorecard cuts the count of early charge-offs at 70–75% approval, but in lender dollars declining by rate is as good or slightly better, because the scorecard declines many small loans.</li>
+<li><b>Escalations:</b> rate, guarantee and program drift; FY2020 over-predicted (COVID relief).</li>
+</ul>
+</div>
+</div>
+
+<img src="figures/fig1_auc_by_cohort.png" alt="AUC by cohort" style="width:80%;margin:0 auto">
+<p class="cap">AUC on each held-out cohort. The dashed line is the exploratory spread-over-prime benchmark.</p>
+
+<div class="pb"></div>
+<h2>Held-out results (FY2015–FY2020 cohorts)</h2>
+<table>
+<tr><th>Model</th><th class="n">AUC</th><th class="n">95% CI</th><th class="n">KS</th><th class="n">Calibration slope</th></tr>
+<tr><td>Interest rate alone</td><td class="n">0.632</td><td class="n">0.628–0.637</td><td class="n">0.23</td><td class="n">0.94</td></tr>
+<tr><td>Rate spread over prime alone (exploratory)</td><td class="n">0.674</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr>
+<tr><td>Gradient boosting</td><td class="n">0.677</td><td class="n">0.673–0.681</td><td class="n">0.26</td><td class="n">0.89</td></tr>
+<tr class="best"><td>Scorecard</td><td class="n">0.684</td><td class="n">0.680–0.689</td><td class="n">0.28</td><td class="n">1.03</td></tr>
+</table>
+<p class="cap">Loan bootstrap within cohort (1,000 resamples). The scorecard beats boosting by 0.0075 (95% CI 0.004–0.011) and the spread benchmark by 0.010 (0.006–0.014).</p>
+
+<img src="figures/fig2_policy.png" alt="Policy">
+<p class="cap">Approving the safest share of applicants. Lender loss = early charge-off amount times the unguaranteed share. The scorecard wins on default counts in the middle of the range; rate-based declines match or beat it in dollars.</p>
+
+<div class="grid">
+<div><img src="figures/fig4_stability.png" alt="Stability"></div>
+<div>
+<h2>Limitations</h2>
+<p>The outcome counts early charge-offs only (52–60% of charge-offs to date). There is no real-estate flag once term is removed, and no lender identity. Public data has no credit-bureau or financial-statement fields, so these results describe what origination data alone can do. The spread check came after seeing results and is labelled exploratory.</p>
+</div>
+</div>
+<p class="foot">Data: U.S. Small Business Administration 7(a) FOIA data, snapshot as of June 30, 2026 (U.S. Government Works); prime rate from FRED (DPRIME). Not affiliated with or endorsed by the SBA.</p>
+</body></html>

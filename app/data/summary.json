@@ -1,0 +1,281 @@
+{
+  "load_log": {
+    "loans_in_window": 588049,
+    "cancelled_or_undisbursed": 72622,
+    "missing_numeric_dropped": 0,
+    "implausible_rate_dropped": 443,
+    "analysis_loans": 514984
+  },
+  "n_test": 304289,
+  "tuning": {
+    "2015": {
+      "tuning": {
+        "M2 scorecard": {
+          "C": 0.0517947467923121,
+          "cv_logloss": 0.1797720745268861
+        },
+        "M3 boosting": {
+          "max_leaf_nodes": 15,
+          "learning_rate": 0.05,
+          "min_samples_leaf": 1000,
+          "iters": 100,
+          "cv_logloss": 0.17848435426176473
+        }
+      },
+      "n_train": 39903,
+      "minutes": 5.505413703123728
+    },
+    "2016": {
+      "tuning": {
+        "M2 scorecard": {
+          "C": 0.0517947467923121,
+          "cv_logloss": 0.16439268675025331
+        },
+        "M3 boosting": {
+          "max_leaf_nodes": 15,
+          "learning_rate": 0.05,
+          "min_samples_leaf": 1000,
+          "iters": 100,
+          "cv_logloss": 0.16187594653791787
+        }
+      },
+      "n_train": 85524,
+      "minutes": 10.020333313941956
+    },
+    "2017": {
+      "tuning": {
+        "M2 scorecard": {
+          "C": 0.7196856730011514,
+          "cv_logloss": 0.15656991502465076
+        },
+        "M3 boosting": {
+          "max_leaf_nodes": 15,
+          "learning_rate": 0.05,
+          "min_samples_leaf": 1000,
+          "iters": 100,
+          "cv_logloss": 0.15436260938077115
+        }
+      },
+      "n_train": 124407,
+      "minutes": 12.906479815642038
+    },
+    "2018": {
+      "tuning": {
+        "M2 scorecard": {
+          "C": 10.0,
+          "cv_logloss": 0.1508029266805604
+        },
+        "M3 boosting": {
+          "max_leaf_nodes": 15,
+          "learning_rate": 0.05,
+          "min_samples_leaf": 1000,
+          "iters": 200,
+          "cv_logloss": 0.14870938012950957
+        }
+      },
+      "n_train": 164806,
+      "minutes": 11.388985812664032
+    },
+    "2019": {
+      "tuning": {
+        "M2 scorecard": {
+          "C": 0.7196856730011514,
+          "cv_logloss": 0.14945554055205706
+        },
+        "M3 boosting": {
+          "max_leaf_nodes": 63,
+          "learning_rate": 0.05,
+          "min_samples_leaf": 100,
+          "iters": 100,
+          "cv_logloss": 0.14709426944997495
+        }
+      },
+      "n_train": 210695,
+      "minutes": 13.86846231619517
+    },
+    "2020": {
+      "tuning": {
+        "M2 scorecard": {
+          "C": 0.19306977288832497,
+          "cv_logloss": 0.15106339930722024
+        },
+        "M3 boosting": {
+          "max_leaf_nodes": 15,
+          "learning_rate": 0.05,
+          "min_samples_leaf": 1000,
+          "iters": 300,
+          "cv_logloss": 0.14850201171746194
+        }
+      },
+      "n_train": 266052,
+      "minutes": 15.18041558265686
+    }
+  },
+  "q1_comparisons": {
+    "M2 scorecard minus M1 interest rate": {
+      "auc_diff": 0.05175657322844929,
+      "ci": [
+        0.04708237711484856,
+        0.05664040055122982
+      ],
+      "interval_above_zero": true
+    },
+    "M3 boosting minus M1 interest rate": {
+      "auc_diff": 0.044268585406066485,
+      "ci": [
+        0.038854319264380245,
+        0.049503792272410856
+      ],
+      "interval_above_zero": true
+    },
+    "M3 boosting minus M2 scorecard": {
+      "auc_diff": -0.007487987822382802,
+      "ci": [
+        -0.010662123275118137,
+        -0.004396762740038028
+      ],
+      "interval_above_zero": false
+    }
+  },
+  "preferred_model": "M2 scorecard",
+  "q2_headline_at_90pct": {
+    "approve_all": {
+      "default_rate": 0.039876564713150986,
+      "lender_loss_per_100": 0.32261868455183157
+    },
+    "model": {
+      "approve_share": 0.9,
+      "default_rate": 0.03515312624379699,
+      "lender_loss_per_100": 0.30204755203531897,
+      "dollars_approved": 126002605243.0
+    },
+    "interest_rate": {
+      "approve_share": 0.9,
+      "default_rate": 0.03474050515046064,
+      "lender_loss_per_100": 0.30373109858756026,
+      "dollars_approved": 126922751043.0
+    },
+    "default_rate_reduction_vs_rate": {
+      "est": -0.0004126210933363475,
+      "ci": [
+        -0.000770652050872896,
+        -5.112119740450366e-05
+      ]
+    },
+    "loss_per_100_reduction_vs_rate": {
+      "est": 0.0016835465522412885,
+      "ci": [
+        6.865062036308659e-05,
+        0.0031439137049369317
+      ]
+    }
+  },
+  "q3": {
+    "psi_score": {
+      "2015": 0.0,
+      "2016": 0.0039520536334940294,
+      "2017": 0.02381894151785125,
+      "2018": 0.04130239722640661,
+      "2019": 0.08500298704793176,
+      "2020": 0.09277243785313598
+    },
+    "psi_inputs": {
+      "2015": {
+        "log_amount": 0.004791462794664427,
+        "guarantee_share": 0.2562067015211125,
+        "interest_rate": 0.04616050714242625,
+        "jobs": 0.00861638183808201,
+        "log_jobs": 0.00861638183808201,
+        "sector": 0.010585653420202089,
+        "state": 0.01701111155596724,
+        "business_type": 0.0010205965445570656,
+        "business_age": 0.00669194672681361,
+        "processing": 0.02009131686672045,
+        "fixed_rate": 0.002444716731881124,
+        "revolver": 0.0027353211948490147,
+        "collateral": 0.0013064381606901893,
+        "franchise": 0.008052413209175553
+      },
+      "2016": {
+        "log_amount": 0.013856397037737854,
+        "guarantee_share": 0.2691668577334396,
+        "interest_rate": 0.035984807616418604,
+        "jobs": 0.020670250306568706,
+        "log_jobs": 0.020670250306568706,
+        "sector": 0.015335142987867841,
+        "state": 0.021927920016161364,
+        "business_type": 0.002477681664189122,
+        "business_age": 0.025123199524144667,
+        "processing": 0.017457741816044335,
+        "fixed_rate": 0.0004226093010352819,
+        "revolver": 0.003487615567226015,
+        "collateral": 0.00027062859493884024,
+        "franchise": 0.008193604180375241
+      },
+      "2017": {
+        "log_amount": 0.017208429660951128,
+        "guarantee_share": 0.29694763088948123,
+        "interest_rate": 0.254071955087516,
+        "jobs": 0.014037685371640227,
+        "log_jobs": 0.014037685371640227,
+        "sector": 0.02256648971866683,
+        "state": 0.03700606201031422,
+        "business_type": 0.013512053237242472,
+        "business_age": 0.016638147938486197,
+        "processing": 0.16868082479887475,
+        "fixed_rate": 0.0006087438692411638,
+        "revolver": 0.00012684104790048874,
+        "collateral": 3.5497434940103674e-06,
+        "franchise": 0.008496071323495618
+      },
+      "2018": {
+        "log_amount": 0.020345790964804437,
+        "guarantee_share": 0.2763092764915356,
+        "interest_rate": 0.8182764051656574,
+        "jobs": 0.018261266396379938,
+        "log_jobs": 0.018261266396379938,
+        "sector": 0.03699214732470223,
+        "state": 0.047670130417198545,
+        "business_type": 0.021077482786899866,
+        "business_age": 0.1312482035028074,
+        "processing": 0.3203965786992537,
+        "fixed_rate": 0.0005367277169202602,
+        "revolver": 0.0014267838368296484,
+        "collateral": 2.4891650230635756e-05,
+        "franchise": 0.026033811525833526
+      },
+      "2019": {
+        "log_amount": 0.03702500485471653,
+        "guarantee_share": 0.29452770225142627,
+        "interest_rate": 1.6194254039457774,
+        "jobs": 0.011952634552366271,
+        "log_jobs": 0.011952634552366271,
+        "sector": 0.043209786833035675,
+        "state": 0.04875330586980291,
+        "business_type": 0.03960964225878801,
+        "business_age": 0.6800145706735871,
+        "processing": 0.35472148850088164,
+        "fixed_rate": 0.00010009480828874383,
+        "revolver": 0.006212733955944091,
+        "collateral": 0.0015774693447253615,
+        "franchise": 0.044552232812141095
+      },
+      "2020": {
+        "log_amount": 0.0867485264952554,
+        "guarantee_share": 0.32077645080185807,
+        "interest_rate": 0.10826248412050334,
+        "jobs": 0.003514287136098404,
+        "log_jobs": 0.003514287136098404,
+        "sector": 0.03853509421075912,
+        "state": 0.03884531238688649,
+        "business_type": 0.042921485249724355,
+        "business_age": 0.01921253709448585,
+        "processing": 0.3900657255441101,
+        "fixed_rate": 0.004966349175572861,
+        "revolver": 0.021941355420374068,
+        "collateral": 0.03153827241835875,
+        "franchise": 0.04726341233485801
+      }
+    }
+  }
+}

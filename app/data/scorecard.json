@@ -1,0 +1,1164 @@
+{
+ "fit_on": "FY2010-FY2020 approvals (all cohorts with a known five-year outcome)",
+ "C": 0.7196856730011514,
+ "factor": 28.85390081777927,
+ "offset": 487.1228762045055,
+ "numeric": [
+  "log_amount",
+  "guarantee_share",
+  "interest_rate",
+  "jobs",
+  "log_jobs"
+ ],
+ "categorical": [
+  "sector",
+  "state",
+  "business_type",
+  "business_age",
+  "processing",
+  "fixed_rate",
+  "revolver",
+  "collateral",
+  "franchise"
+ ],
+ "edges": {
+  "log_amount": [
+   9.903487552536127,
+   10.308952660644293,
+   10.819778284410283,
+   11.358608104585871,
+   11.782188951897991,
+   12.206072645530174,
+   12.66032791780777,
+   13.126355398673866,
+   13.863347887378435
+  ],
+  "guarantee_share": [
+   0.5,
+   0.75,
+   0.85
+  ],
+  "interest_rate": [
+   4.99,
+   5.25,
+   5.75,
+   6.0,
+   6.5,
+   7.0,
+   7.75,
+   8.75
+  ],
+  "jobs": [
+   0.0,
+   1.0,
+   2.0,
+   3.0,
+   5.0,
+   6.0,
+   10.0,
+   14.0,
+   25.0
+  ],
+  "log_jobs": [
+   0.0,
+   0.6931471805599453,
+   1.0986122886681098,
+   1.3862943611198906,
+   1.791759469228055,
+   1.9459101490553132,
+   2.3978952727983707,
+   2.70805020110221,
+   3.258096538021482
+  ]
+ },
+ "levels": {
+  "sector": [
+   "11",
+   "21",
+   "23",
+   "31",
+   "32",
+   "33",
+   "42",
+   "44",
+   "45",
+   "48",
+   "49",
+   "51",
+   "52",
+   "53",
+   "54",
+   "56",
+   "61",
+   "62",
+   "71",
+   "72",
+   "81"
+  ],
+  "state": [
+   "AK",
+   "AL",
+   "AR",
+   "AZ",
+   "CA",
+   "CO",
+   "CT",
+   "DC",
+   "DE",
+   "FL",
+   "GA",
+   "HI",
+   "IA",
+   "ID",
+   "IL",
+   "IN",
+   "KS",
+   "KY",
+   "LA",
+   "MA",
+   "MD",
+   "ME",
+   "MI",
+   "MN",
+   "MO",
+   "MS",
+   "MT",
+   "NC",
+   "ND",
+   "NE",
+   "NH",
+   "NJ",
+   "NM",
+   "NV",
+   "NY",
+   "OH",
+   "OK",
+   "OR",
+   "PA",
+   "PR",
+   "RI",
+   "SC",
+   "SD",
+   "TN",
+   "TX",
+   "UT",
+   "VA",
+   "VT",
+   "WA",
+   "WI",
+   "WV",
+   "WY"
+  ],
+  "business_type": [
+   "corporation",
+   "individual",
+   "partnership"
+  ],
+  "business_age": [
+   "existing",
+   "startup",
+   "unanswered",
+   "under_2y"
+  ],
+  "processing": [
+   "express",
+   "general",
+   "pilot_initiative",
+   "preferred_lender",
+   "working_capital_trade"
+  ],
+  "fixed_rate": [
+   "0",
+   "1"
+  ],
+  "revolver": [
+   "0",
+   "1"
+  ],
+  "collateral": [
+   "0",
+   "1"
+  ],
+  "franchise": [
+   "0",
+   "1"
+  ]
+ },
+ "points": [
+  {
+   "feature": "log_amount",
+   "bin": "0",
+   "woe": -0.5688909903869144,
+   "points": 32.13678033425013
+  },
+  {
+   "feature": "log_amount",
+   "bin": "1",
+   "woe": -0.44324069731043136,
+   "points": 34.18451824545107
+  },
+  {
+   "feature": "log_amount",
+   "bin": "2",
+   "woe": -0.15521693668276237,
+   "points": 38.87847605106426
+  },
+  {
+   "feature": "log_amount",
+   "bin": "3",
+   "woe": -0.1067780164105526,
+   "points": 39.66789095007024
+  },
+  {
+   "feature": "log_amount",
+   "bin": "4",
+   "woe": -0.10824035673152811,
+   "points": 39.64405901429818
+  },
+  {
+   "feature": "log_amount",
+   "bin": "5",
+   "woe": -0.3451099262157749,
+   "points": 35.7837672030607
+  },
+  {
+   "feature": "log_amount",
+   "bin": "6",
+   "woe": 0.14826145535296706,
+   "points": 43.82429984013885
+  },
+  {
+   "feature": "log_amount",
+   "bin": "7",
+   "woe": 0.4157898976008033,
+   "points": 48.18424298155248
+  },
+  {
+   "feature": "log_amount",
+   "bin": "8",
+   "woe": 1.103717754417594,
+   "points": 59.39548585320646
+  },
+  {
+   "feature": "log_amount",
+   "bin": "9",
+   "woe": 1.6244953593101024,
+   "points": 67.88266100204345
+  },
+  {
+   "feature": "guarantee_share",
+   "bin": "0",
+   "woe": 1.8881979491655112,
+   "points": 63.46595557309418
+  },
+  {
+   "feature": "guarantee_share",
+   "bin": "1",
+   "woe": -0.0721840405099125,
+   "points": 40.564812593126575
+  },
+  {
+   "feature": "guarantee_share",
+   "bin": "2",
+   "woe": 0.5916679003916353,
+   "points": 48.31991761662889
+  },
+  {
+   "feature": "guarantee_share",
+   "bin": "3",
+   "woe": -0.542452311535545,
+   "points": 35.07114810813338
+  },
+  {
+   "feature": "interest_rate",
+   "bin": "0",
+   "woe": 1.1299365645270103,
+   "points": 62.7174202781836
+  },
+  {
+   "feature": "interest_rate",
+   "bin": "1",
+   "woe": 1.0923945929028827,
+   "points": 62.0094201723016
+  },
+  {
+   "feature": "interest_rate",
+   "bin": "2",
+   "woe": 0.680542944763291,
+   "points": 54.242353130380295
+  },
+  {
+   "feature": "interest_rate",
+   "bin": "3",
+   "woe": 0.5999475238885995,
+   "points": 52.72241254004077
+  },
+  {
+   "feature": "interest_rate",
+   "bin": "4",
+   "woe": 0.050553977461853056,
+   "points": 42.36145726216085
+  },
+  {
+   "feature": "interest_rate",
+   "bin": "5",
+   "woe": 0.10898322271848206,
+   "points": 43.46336827105714
+  },
+  {
+   "feature": "interest_rate",
+   "bin": "6",
+   "woe": -0.2745290775042465,
+   "points": 36.23075001958963
+  },
+  {
+   "feature": "interest_rate",
+   "bin": "7",
+   "woe": -0.5740650330953698,
+   "points": 30.581832845040218
+  },
+  {
+   "feature": "interest_rate",
+   "bin": "8",
+   "woe": -0.7265525245798065,
+   "points": 27.706087234298863
+  },
+  {
+   "feature": "jobs",
+   "bin": "1",
+   "woe": 0.035567930985018106,
+   "points": 41.443780402866146
+  },
+  {
+   "feature": "jobs",
+   "bin": "2",
+   "woe": -0.20253712909370652,
+   "points": 41.204688798507334
+  },
+  {
+   "feature": "jobs",
+   "bin": "3",
+   "woe": -0.14355835179186408,
+   "points": 41.2639119434651
+  },
+  {
+   "feature": "jobs",
+   "bin": "4",
+   "woe": -0.1938001557291985,
+   "points": 41.21346197190512
+  },
+  {
+   "feature": "jobs",
+   "bin": "5",
+   "woe": -0.1769455596578217,
+   "points": 41.23038640187814
+  },
+  {
+   "feature": "jobs",
+   "bin": "6",
+   "woe": 0.002457709650427381,
+   "points": 41.410532995453025
+  },
+  {
+   "feature": "jobs",
+   "bin": "7",
+   "woe": 0.08926010798200303,
+   "points": 41.49769504346841
+  },
+  {
+   "feature": "jobs",
+   "bin": "8",
+   "woe": 0.21370396282612333,
+   "points": 41.6226545084098
+  },
+  {
+   "feature": "jobs",
+   "bin": "9",
+   "woe": 0.5114136942780197,
+   "points": 41.92159774507403
+  },
+  {
+   "feature": "log_jobs",
+   "bin": "1",
+   "woe": 0.035567930985018106,
+   "points": 41.443780402866146
+  },
+  {
+   "feature": "log_jobs",
+   "bin": "2",
+   "woe": -0.20253712909370652,
+   "points": 41.204688798507334
+  },
+  {
+   "feature": "log_jobs",
+   "bin": "3",
+   "woe": -0.14355835179186408,
+   "points": 41.2639119434651
+  },
+  {
+   "feature": "log_jobs",
+   "bin": "4",
+   "woe": -0.1938001557291985,
+   "points": 41.21346197190512
+  },
+  {
+   "feature": "log_jobs",
+   "bin": "5",
+   "woe": -0.1769455596578217,
+   "points": 41.23038640187814
+  },
+  {
+   "feature": "log_jobs",
+   "bin": "6",
+   "woe": 0.002457709650427381,
+   "points": 41.410532995453025
+  },
+  {
+   "feature": "log_jobs",
+   "bin": "7",
+   "woe": 0.08926010798200303,
+   "points": 41.49769504346841
+  },
+  {
+   "feature": "log_jobs",
+   "bin": "8",
+   "woe": 0.21370396282612333,
+   "points": 41.6226545084098
+  },
+  {
+   "feature": "log_jobs",
+   "bin": "9",
+   "woe": 0.5114136942780197,
+   "points": 41.92159774507403
+  },
+  {
+   "feature": "sector",
+   "bin": "11",
+   "woe": 0.8119067208076437,
+   "points": 59.53041946142308
+  },
+  {
+   "feature": "sector",
+   "bin": "21",
+   "woe": 0.26190755830046925,
+   "points": 47.254034176644886
+  },
+  {
+   "feature": "sector",
+   "bin": "23",
+   "woe": -0.1299790271721238,
+   "points": 38.50683774589585
+  },
+  {
+   "feature": "sector",
+   "bin": "31",
+   "woe": 0.15625968595981002,
+   "points": 44.89589606701808
+  },
+  {
+   "feature": "sector",
+   "bin": "32",
+   "woe": 0.2670780432596428,
+   "points": 47.36944319868523
+  },
+  {
+   "feature": "sector",
+   "bin": "33",
+   "woe": 0.34064340790242603,
+   "points": 49.01147617170494
+  },
+  {
+   "feature": "sector",
+   "bin": "42",
+   "woe": -0.20328396477327762,
+   "points": 36.8706176957305
+  },
+  {
+   "feature": "sector",
+   "bin": "44",
+   "woe": -0.03586091483191861,
+   "points": 40.607623143636026
+  },
+  {
+   "feature": "sector",
+   "bin": "45",
+   "woe": -0.3678981657084572,
+   "points": 33.19630782075902
+  },
+  {
+   "feature": "sector",
+   "bin": "48",
+   "woe": -0.381430603135431,
+   "points": 32.89425387773412
+  },
+  {
+   "feature": "sector",
+   "bin": "49",
+   "woe": -0.07803777931071919,
+   "points": 39.666204549314294
+  },
+  {
+   "feature": "sector",
+   "bin": "51",
+   "woe": 0.04331123803538084,
+   "points": 42.37480374804585
+  },
+  {
+   "feature": "sector",
+   "bin": "52",
+   "woe": 0.4846198506076612,
+   "points": 52.22513612442934
+  },
+  {
+   "feature": "sector",
+   "bin": "53",
+   "woe": 0.4157029772112814,
+   "points": 50.686860890373495
+  },
+  {
+   "feature": "sector",
+   "bin": "54",
+   "woe": 0.07867202186761452,
+   "points": 43.1640824158849
+  },
+  {
+   "feature": "sector",
+   "bin": "56",
+   "woe": -0.09496224554745955,
+   "points": 39.28843803179031
+  },
+  {
+   "feature": "sector",
+   "bin": "61",
+   "woe": -0.13576276932476672,
+   "points": 38.37774037285625
+  },
+  {
+   "feature": "sector",
+   "bin": "62",
+   "woe": 0.5563927367858295,
+   "points": 53.827159661532875
+  },
+  {
+   "feature": "sector",
+   "bin": "71",
+   "woe": -0.20131525122934193,
+   "points": 36.91456082806282
+  },
+  {
+   "feature": "sector",
+   "bin": "72",
+   "woe": -0.0538012213096218,
+   "points": 40.20718232579312
+  },
+  {
+   "feature": "sector",
+   "bin": "81",
+   "woe": -0.02433115313353357,
+   "points": 40.86497589342172
+  },
+  {
+   "feature": "sector",
+   "bin": "other",
+   "woe": 0.43013719599339956,
+   "points": 51.009043255608916
+  },
+  {
+   "feature": "state",
+   "bin": "AK",
+   "woe": 0.43969067628653846,
+   "points": 51.613019632808296
+  },
+  {
+   "feature": "state",
+   "bin": "AL",
+   "woe": -0.30273184949257714,
+   "points": 34.38184206574291
+  },
+  {
+   "feature": "state",
+   "bin": "AR",
+   "woe": 0.04737337798885555,
+   "points": 42.507572539181204
+  },
+  {
+   "feature": "state",
+   "bin": "AZ",
+   "woe": 0.05155715719433,
+   "points": 42.60467552284307
+  },
+  {
+   "feature": "state",
+   "bin": "CA",
+   "woe": -0.07067779295609779,
+   "points": 39.76767629691972
+  },
+  {
+   "feature": "state",
+   "bin": "CO",
+   "woe": 0.1112266948365827,
+   "points": 43.98956938416463
+  },
+  {
+   "feature": "state",
+   "bin": "CT",
+   "woe": 0.2830011687310139,
+   "points": 47.97635097872632
+  },
+  {
+   "feature": "state",
+   "bin": "DC",
+   "woe": 0.2630011354506374,
+   "points": 47.51216230875065
+  },
+  {
+   "feature": "state",
+   "bin": "DE",
+   "woe": -0.18079828532234404,
+   "points": 37.211846305441256
+  },
+  {
+   "feature": "state",
+   "bin": "FL",
+   "woe": -0.4093052867668163,
+   "points": 31.908337076548552
+  },
+  {
+   "feature": "state",
+   "bin": "GA",
+   "woe": -0.07945036791114829,
+   "points": 39.564070140691854
+  },
+  {
+   "feature": "state",
+   "bin": "HI",
+   "woe": 0.013043329388986953,
+   "points": 41.710792885048896
+  },
+  {
+   "feature": "state",
+   "bin": "IA",
+   "woe": -0.07071112049981164,
+   "points": 39.76690278479735
+  },
+  {
+   "feature": "state",
+   "bin": "ID",
+   "woe": 0.4037111933404881,
+   "points": 50.77795760561026
+  },
+  {
+   "feature": "state",
+   "bin": "IL",
+   "woe": -0.13471306195231306,
+   "points": 38.28145645267315
+  },
+  {
+   "feature": "state",
+   "bin": "IN",
+   "woe": 0.11399938446554081,
+   "points": 44.053921832637016
+  },
+  {
+   "feature": "state",
+   "bin": "KS",
+   "woe": -0.02366699126662252,
+   "points": 40.85876855685803
+  },
+  {
+   "feature": "state",
+   "bin": "KY",
+   "woe": -0.00784064480490466,
+   "points": 41.22608848136271
+  },
+  {
+   "feature": "state",
+   "bin": "LA",
+   "woe": -0.07141694734845574,
+   "points": 39.75052097075174
+  },
+  {
+   "feature": "state",
+   "bin": "MA",
+   "woe": 0.14722939221251927,
+   "points": 44.82517020423276
+  },
+  {
+   "feature": "state",
+   "bin": "MD",
+   "woe": -0.018458117104521797,
+   "points": 40.979663374155585
+  },
+  {
+   "feature": "state",
+   "bin": "ME",
+   "woe": 0.6717247093480027,
+   "points": 56.998389131246654
+  },
+  {
+   "feature": "state",
+   "bin": "MI",
+   "woe": 0.36803484652520113,
+   "points": 49.949931184572876
+  },
+  {
+   "feature": "state",
+   "bin": "MN",
+   "woe": 0.31589423589242216,
+   "points": 48.73977916322117
+  },
+  {
+   "feature": "state",
+   "bin": "MO",
+   "woe": -0.16017319256538706,
+   "points": 37.690542227631056
+  },
+  {
+   "feature": "state",
+   "bin": "MS",
+   "woe": -0.028674518090410345,
+   "points": 40.742546889443
+  },
+  {
+   "feature": "state",
+   "bin": "MT",
+   "woe": 0.6138752109961625,
+   "points": 55.655737280509584
+  },
+  {
+   "feature": "state",
+   "bin": "NC",
+   "woe": 0.0235458579962779,
+   "points": 41.95455021871209
+  },
+  {
+   "feature": "state",
+   "bin": "ND",
+   "woe": 0.559608942065965,
+   "points": 54.396250016357584
+  },
+  {
+   "feature": "state",
+   "bin": "NE",
+   "woe": 0.10623077903937181,
+   "points": 43.873617201650355
+  },
+  {
+   "feature": "state",
+   "bin": "NH",
+   "woe": 0.4054464281292529,
+   "points": 50.818231355028594
+  },
+  {
+   "feature": "state",
+   "bin": "NJ",
+   "woe": -0.1212637984911742,
+   "points": 38.59360571915981
+  },
+  {
+   "feature": "state",
+   "bin": "NM",
+   "woe": 0.36308459400761994,
+   "points": 49.835038819146945
+  },
+  {
+   "feature": "state",
+   "bin": "NV",
+   "woe": -0.39230961486471433,
+   "points": 32.3027963369399
+  },
+  {
+   "feature": "state",
+   "bin": "NY",
+   "woe": -0.05523549588641451,
+   "points": 40.126082667432044
+  },
+  {
+   "feature": "state",
+   "bin": "OH",
+   "woe": 0.11451095200709825,
+   "points": 44.06579500571574
+  },
+  {
+   "feature": "state",
+   "bin": "OK",
+   "woe": -0.08944420499348286,
+   "points": 39.33211922950242
+  },
+  {
+   "feature": "state",
+   "bin": "OR",
+   "woe": 0.21406258253974272,
+   "points": 46.376328109488036
+  },
+  {
+   "feature": "state",
+   "bin": "PA",
+   "woe": 0.2752181846807654,
+   "points": 47.7957126285756
+  },
+  {
+   "feature": "state",
+   "bin": "PR",
+   "woe": -0.002879062321377612,
+   "points": 41.34124380844223
+  },
+  {
+   "feature": "state",
+   "bin": "RI",
+   "woe": 0.3572259174183014,
+   "points": 49.69906248072347
+  },
+  {
+   "feature": "state",
+   "bin": "SC",
+   "woe": -0.21130570015004482,
+   "points": 36.50378766800083
+  },
+  {
+   "feature": "state",
+   "bin": "SD",
+   "woe": 0.10778758423376177,
+   "points": 43.90974970815494
+  },
+  {
+   "feature": "state",
+   "bin": "TN",
+   "woe": -0.11394250177299542,
+   "points": 38.7635285857104
+  },
+  {
+   "feature": "state",
+   "bin": "TX",
+   "woe": -0.3091029563497156,
+   "points": 34.233972530886206
+  },
+  {
+   "feature": "state",
+   "bin": "UT",
+   "woe": 0.13435904699860773,
+   "points": 44.52645727994802
+  },
+  {
+   "feature": "state",
+   "bin": "VA",
+   "woe": -0.19245650808572057,
+   "points": 36.94126600975137
+  },
+  {
+   "feature": "state",
+   "bin": "VT",
+   "woe": 0.43301061940118946,
+   "points": 51.45797955474931
+  },
+  {
+   "feature": "state",
+   "bin": "WA",
+   "woe": 0.45465810801947415,
+   "points": 51.960404666206216
+  },
+  {
+   "feature": "state",
+   "bin": "WI",
+   "woe": 0.386809404409897,
+   "points": 50.38567731217702
+  },
+  {
+   "feature": "state",
+   "bin": "WV",
+   "woe": 0.33378451483954275,
+   "points": 49.15500171178092
+  },
+  {
+   "feature": "state",
+   "bin": "WY",
+   "woe": 0.06894501091371683,
+   "points": 43.008237085895715
+  },
+  {
+   "feature": "state",
+   "bin": "other",
+   "woe": 0.1419774247171251,
+   "points": 44.70327521674619
+  },
+  {
+   "feature": "business_type",
+   "bin": "corporation",
+   "woe": 0.020020916096596807,
+   "points": 41.6712630133999
+  },
+  {
+   "feature": "business_type",
+   "bin": "individual",
+   "woe": -0.2303698742686464,
+   "points": 38.37958881850546
+  },
+  {
+   "feature": "business_type",
+   "bin": "other",
+   "woe": -1.6001959775267993,
+   "points": 20.371653187125418
+  },
+  {
+   "feature": "business_type",
+   "bin": "partnership",
+   "woe": 0.7003069492629217,
+   "points": 50.61440336314789
+  },
+  {
+   "feature": "business_age",
+   "bin": "existing",
+   "woe": 0.13447187741863292,
+   "points": 43.71532248624773
+  },
+  {
+   "feature": "business_age",
+   "bin": "startup",
+   "woe": -0.22099301045579656,
+   "points": 37.616285253549904
+  },
+  {
+   "feature": "business_age",
+   "bin": "unanswered",
+   "woe": -0.23535435845674205,
+   "points": 37.36987442885985
+  },
+  {
+   "feature": "business_age",
+   "bin": "under_2y",
+   "woe": -0.21505505015575999,
+   "points": 37.718168286703374
+  },
+  {
+   "feature": "processing",
+   "bin": "express",
+   "woe": -0.07358165191801135,
+   "points": 40.87350193384722
+  },
+  {
+   "feature": "processing",
+   "bin": "general",
+   "woe": 0.373160834171568,
+   "points": 44.11904036383423
+  },
+  {
+   "feature": "processing",
+   "bin": "other",
+   "woe": 0.9750055687053892,
+   "points": 48.491380751498134
+  },
+  {
+   "feature": "processing",
+   "bin": "pilot_initiative",
+   "woe": -0.6163816270383716,
+   "points": 36.930115679118195
+  },
+  {
+   "feature": "processing",
+   "bin": "preferred_lender",
+   "woe": 0.2720953272392997,
+   "points": 43.38480980169105
+  },
+  {
+   "feature": "processing",
+   "bin": "working_capital_trade",
+   "woe": 0.625165065334974,
+   "points": 45.94982530645141
+  },
+  {
+   "feature": "fixed_rate",
+   "bin": "0",
+   "woe": -0.07137353898258691,
+   "points": 39.30799005484436
+  },
+  {
+   "feature": "fixed_rate",
+   "bin": "1",
+   "woe": 0.30418235740219696,
+   "points": 50.35824170733889
+  },
+  {
+   "feature": "revolver",
+   "bin": "0",
+   "woe": 0.07733246206257757,
+   "points": 37.20695172371451
+  },
+  {
+   "feature": "revolver",
+   "bin": "1",
+   "woe": -0.16427325905928467,
+   "points": 50.332268057651106
+  },
+  {
+   "feature": "collateral",
+   "bin": "0",
+   "woe": -0.44017367891544046,
+   "points": 37.582633421620436
+  },
+  {
+   "feature": "collateral",
+   "bin": "1",
+   "woe": 0.22470490759886402,
+   "points": 43.36091533801045
+  },
+  {
+   "feature": "franchise",
+   "bin": "0",
+   "woe": 0.01914619055691877,
+   "points": 41.964903250236986
+  },
+  {
+   "feature": "franchise",
+   "bin": "1",
+   "woe": -0.17234615950376878,
+   "points": 36.39563634300665
+  }
+ ],
+ "neutral_points": 41.408065102737204,
+ "choices": {
+  "sector": [
+   "11",
+   "21",
+   "22",
+   "23",
+   "31",
+   "32",
+   "33",
+   "42",
+   "44",
+   "45",
+   "48",
+   "49",
+   "51",
+   "52",
+   "53",
+   "54",
+   "55",
+   "56",
+   "61",
+   "62",
+   "71",
+   "72",
+   "81",
+   "92",
+   "unknown"
+  ],
+  "state": [
+   "AK",
+   "AL",
+   "AR",
+   "AZ",
+   "CA",
+   "CO",
+   "CT",
+   "DC",
+   "DE",
+   "FL",
+   "FM",
+   "GA",
+   "GU",
+   "HI",
+   "IA",
+   "ID",
+   "IL",
+   "IN",
+   "KS",
+   "KY",
+   "LA",
+   "MA",
+   "MD",
+   "ME",
+   "MH",
+   "MI",
+   "MN",
+   "MO",
+   "MP",
+   "MS",
+   "MT",
+   "NC",
+   "ND",
+   "NE",
+   "NH",
+   "NJ",
+   "NM",
+   "NV",
+   "NY",
+   "OH",
+   "OK",
+   "OR",
+   "PA",
+   "PR",
+   "RI",
+   "SC",
+   "SD",
+   "TN",
+   "TX",
+   "UT",
+   "VA",
+   "VI",
+   "VT",
+   "WA",
+   "WI",
+   "WV",
+   "WY"
+  ],
+  "business_type": [
+   "corporation",
+   "individual",
+   "partnership",
+   "unknown"
+  ],
+  "business_age": [
+   "existing",
+   "startup",
+   "unanswered",
+   "under_2y"
+  ],
+  "processing": [
+   "express",
+   "general",
+   "other",
+   "pilot_initiative",
+   "preferred_lender",
+   "working_capital_trade"
+  ],
+  "fixed_rate": [
+   "0",
+   "1"
+  ],
+  "revolver": [
+   "0",
+   "1"
+  ],
+  "collateral": [
+   "0",
+   "1"
+  ],
+  "franchise": [
+   "0",
+   "1"
+  ]
+ },
+ "numeric_ranges": {
+  "amount": [
+   5000.0,
+   130900.0,
+   3650000.0
+  ],
+  "guarantee_share": [
+   0.5,
+   0.75,
+   0.9
+  ],
+  "interest_rate": [
+   3.75,
+   6.0,
+   11.13
+  ],
+  "jobs": [
+   0.0,
+   5.0,
+   100.0
+  ]
+ }
+}
