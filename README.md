@@ -8,7 +8,7 @@ The project follows the workflow of a bank's credit-risk and model-validation te
 - an approval-policy analysis in dollars
 - the stability and segment checks a model-risk team runs.
 
-The model is an R Shiny loan desk that shows a score, a default probability and the reasons behind it.
+The scorecard powers an R Shiny loan desk that shows a score, a default probability and the reasons behind it.
 
 **Live app:** APP_URL · **Two-page summary:** [PDF](reports/Small-Business%20Loan%20Default%20-%20Summary.pdf)
 
@@ -18,7 +18,7 @@ The model is an R Shiny loan desk that shows a score, a default probability and 
 
 ## Findings
 
-**1. A five-year-old model still ranks risk well, and a simple scorecard beats gradient boosting.**
+**1. A model built on loans five years older still separates risk usefully, and a simple scorecard beats gradient boosting.**
 Each test cohort was scored by a model trained only on loans approved at least five years earlier, because those are the only loans whose five-year outcomes a lender would know.
 
 | Model | AUC (held-out cohorts) | 95% CI | KS |
@@ -54,7 +54,7 @@ Compared on the same cohorts, these policies approve the safest share of applica
 **4. Model-risk checks flag what a validator should escalate.**
 - **Drift:**
   - interest rate (rising prime rate)
-  - guarantee share (PSI 0.26–0.32 every year, because the training cohorts include the Recovery Act's temporary 90% guarantees)
+  - guarantee share (PSI 0.26–0.32 every year). The reference years include the Recovery Act's temporary 90% guarantees, which covered 38% of FY2010 and 22% of FY2011 loans, against under 1% from FY2012.
   - processing method (pilot programs ending)
   - business age in FY2019 (SBA's coding change).
 - **Calibration by cohort:** FY2017–FY2018 are under-predicted. FY2020 is over-predicted (2.6% observed against 3.3% predicted), as the plan expected from the CARES Act payment relief.
@@ -107,7 +107,7 @@ The first pipeline check gave an AUC of 0.89 for the scorecard and 0.95 for boos
 - **Early charge-offs only.** Charge-offs lag defaults, so a five-year window captures 52–60% of a cohort's charge-offs to date.
 - **No real-estate indicator** after the term leak was removed, and no lender identity (the data only shows the current servicing bank).
 - **No credit-bureau or financial-statement data** is public, so performance is far below what a lender with full underwriting data achieves. These results describe what public origination data can do.
-- **Boosting was tuned on a small grid.** It usually chose the smallest settings, so a larger grid is unlikely to help.
+- **Boosting was tuned on an 8-setting grid.** It usually chose the most conservative settings (15 leaves, 100–300 iterations), consistent with extra flexibility not paying off out of time.
 - **The spread-over-prime check** was added after seeing results and is labelled exploratory.
 
 ## Reproduce
