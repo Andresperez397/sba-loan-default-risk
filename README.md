@@ -24,7 +24,7 @@ Each test cohort was scored by a model trained only on loans approved at least f
 | Model | AUC (held-out cohorts) | 95% CI | KS |
 |---|---|---|---|
 | Interest rate alone | 0.632 | 0.628–0.637 | 0.23 |
-| Gradient boosting | 0.677 | 0.673–0.681 | 0.26 |
+| Gradient boosting | 0.677 | 0.672–0.681 | 0.26 |
 | **Scorecard** (weight of evidence + logistic) | **0.684** | 0.680–0.689 | 0.28 |
 
 - **Scorecard against boosting:** the scorecard beat gradient boosting by 0.0075 AUC (95% CI 0.004–0.011).

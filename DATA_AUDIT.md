@@ -40,17 +40,17 @@ So `default5` measures **early charge-off**, not every loss, and the README says
 **Analysis set.**
 - **In the window:** 588,049 loans approved FY2010–FY2020.
 - **Removed:** 72,622 cancelled or undisbursed.
-- **Remaining:** 515,427 disbursed loans.
+- **Remaining:** 515,427 disbursed loans, then 514,984 after dropping 443 with an initial rate under 2% (the cleaning rule; see `DEVIATIONS.md`). The table below is after that rule.
 
 | FY | Loans | Charged off within 5 years | Ever charged off (to date) | Mean rate |
 |---|---|---|---|---|
-| 2010 | 39,913 | 5.0% | 9.2% | 6.45% |
-| 2012 | 38,889 | 3.3% | 6.3% | 6.23% |
-| 2014 | 45,962 | 3.6% | 6.4% | 6.04% |
-| 2016 | 56,789 | 3.9% | 7.2% | 6.27% |
-| 2018 | 54,195 | 4.7% | 7.9% | 7.29% |
-| 2019 | 45,671 | 4.0% | 6.7% | 7.91% |
-| 2020 | 36,464 | 2.6% | 4.0% | 6.46% |
+| 2010 | 39,903 | 5.0% | 9.2% | 6.45% |
+| 2012 | 38,883 | 3.3% | 6.3% | 6.23% |
+| 2014 | 45,889 | 3.6% | 6.4% | 6.04% |
+| 2016 | 56,736 | 3.9% | 7.2% | 6.27% |
+| 2018 | 54,168 | 4.7% | 7.9% | 7.29% |
+| 2019 | 45,601 | 4.0% | 6.7% | 7.92% |
+| 2020 | 36,368 | 2.6% | 4.0% | 6.47% |
 
 **Two era effects to keep in mind:**
 - **The 2008–09 recession:** charge-offs reached 27–33% for FY2006–FY2008 cohorts. Those cohorts are outside the window, but they show how much default rates move with the economy.
