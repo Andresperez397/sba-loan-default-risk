@@ -10,7 +10,7 @@ The project follows the workflow of a bank's credit-risk and model-validation te
 
 The scorecard powers an R Shiny loan desk that shows a score, a default probability and the reasons behind it.
 
-**Live app:** APP_URL · **Two-page summary:** [PDF](reports/Small-Business%20Loan%20Default%20-%20Summary.pdf)
+**Live app:** [andresperez397-sba-loan-default-risk.share.connect.posit.cloud](https://andresperez397-sba-loan-default-risk.share.connect.posit.cloud) · **Two-page summary:** [PDF](reports/Small-Business%20Loan%20Default%20-%20Summary.pdf)
 
 **Data:** 514,984 disbursed SBA 7(a) loans approved FY2010–FY2020 (SBA loan-level FOIA data, public domain).
 **Test cohorts:** FY2015–FY2020 (304,289 loans).
