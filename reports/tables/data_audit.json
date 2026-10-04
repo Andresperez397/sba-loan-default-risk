@@ -1,0 +1,446 @@
+{
+  "all_loans_fy2000_on": 1624422,
+  "status_counts": {
+    "PIF": 923144,
+    "EXEMPT": 295634,
+    "CANCLD": 199124,
+    "CHGOFF": 185397,
+    "COMMIT": 21123
+  },
+  "interest_rate_missing_share_by_fy": {
+    "2000": 1.0,
+    "2001": 1.0,
+    "2002": 1.0,
+    "2003": 1.0,
+    "2004": 1.0,
+    "2005": 1.0,
+    "2006": 1.0,
+    "2007": 1.0,
+    "2008": 1.0,
+    "2009": 0.1127,
+    "2010": 0.0,
+    "2011": 0.0,
+    "2012": 0.0,
+    "2013": 0.0,
+    "2014": 0.0,
+    "2015": 0.0,
+    "2016": 0.0,
+    "2017": 0.0,
+    "2018": 0.0,
+    "2019": 0.0,
+    "2020": 0.0,
+    "2021": 0.0,
+    "2022": 0.0,
+    "2023": 0.0,
+    "2024": 0.0,
+    "2025": 0.0001,
+    "2026": 0.0
+  },
+  "chargeoff_timing_by_fy": {
+    "2000": {
+      "chargeoffs": 5557,
+      "median_months": 70.0,
+      "share_within_60": 0.4285
+    },
+    "2001": {
+      "chargeoffs": 5445,
+      "median_months": 64.0,
+      "share_within_60": 0.4121
+    },
+    "2002": {
+      "chargeoffs": 6074,
+      "median_months": 63.0,
+      "share_within_60": 0.4824
+    },
+    "2003": {
+      "chargeoffs": 9102,
+      "median_months": 60.0,
+      "share_within_60": 0.5011
+    },
+    "2004": {
+      "chargeoffs": 13172,
+      "median_months": 60.0,
+      "share_within_60": 0.506
+    },
+    "2005": {
+      "chargeoffs": 20680,
+      "median_months": 58.0,
+      "share_within_60": 0.548
+    },
+    "2006": {
+      "chargeoffs": 27820,
+      "median_months": 50.0,
+      "share_within_60": 0.7
+    },
+    "2007": {
+      "chargeoffs": 32439,
+      "median_months": 42.0,
+      "share_within_60": 0.7535
+    },
+    "2008": {
+      "chargeoffs": 18671,
+      "median_months": 40.0,
+      "share_within_60": 0.7049
+    },
+    "2009": {
+      "chargeoffs": 5391,
+      "median_months": 52.0,
+      "share_within_60": 0.5747
+    },
+    "2010": {
+      "chargeoffs": 3671,
+      "median_months": 58.0,
+      "share_within_60": 0.5409
+    },
+    "2011": {
+      "chargeoffs": 3146,
+      "median_months": 58.0,
+      "share_within_60": 0.5366
+    },
+    "2012": {
+      "chargeoffs": 2439,
+      "median_months": 58.0,
+      "share_within_60": 0.5269
+    },
+    "2013": {
+      "chargeoffs": 2422,
+      "median_months": 59.0,
+      "share_within_60": 0.519
+    },
+    "2014": {
+      "chargeoffs": 2942,
+      "median_months": 56.0,
+      "share_within_60": 0.5559
+    },
+    "2015": {
+      "chargeoffs": 3797,
+      "median_months": 54.0,
+      "share_within_60": 0.5695
+    },
+    "2016": {
+      "chargeoffs": 4075,
+      "median_months": 56.0,
+      "share_within_60": 0.5431
+    },
+    "2017": {
+      "chargeoffs": 4327,
+      "median_months": 56.0,
+      "share_within_60": 0.5661
+    },
+    "2018": {
+      "chargeoffs": 4277,
+      "median_months": 53.0,
+      "share_within_60": 0.5961
+    },
+    "2019": {
+      "chargeoffs": 3057,
+      "median_months": 54.0,
+      "share_within_60": 0.5916
+    },
+    "2020": {
+      "chargeoffs": 1461,
+      "median_months": 52.0,
+      "share_within_60": 0.6564
+    },
+    "2021": {
+      "chargeoffs": 1277,
+      "median_months": 46.0,
+      "share_within_60": 0.9091
+    },
+    "2022": {
+      "chargeoffs": 1706,
+      "median_months": 37.0,
+      "share_within_60": 1.0
+    },
+    "2023": {
+      "chargeoffs": 1735,
+      "median_months": 30.0,
+      "share_within_60": 1.0
+    },
+    "2024": {
+      "chargeoffs": 629,
+      "median_months": 22.0,
+      "share_within_60": 1.0
+    },
+    "2025": {
+      "chargeoffs": 85,
+      "median_months": 16.0,
+      "share_within_60": 1.0
+    }
+  },
+  "business_age_categories_first_fy": [
+    {
+      "c": "Less than 4 years old but at least 3",
+      "first_fy": "2000",
+      "last_fy": "2018",
+      "n": 367663
+    },
+    {
+      "c": "Existing, 5 or more years",
+      "first_fy": "2000",
+      "last_fy": "2018",
+      "n": 328882
+    },
+    {
+      "c": "Existing or more than 2 years old",
+      "first_fy": "2004",
+      "last_fy": "2026",
+      "n": 268444
+    },
+    {
+      "c": "New, Less than 1 Year old",
+      "first_fy": "2000",
+      "last_fy": "2018",
+      "n": 209378
+    },
+    {
+      "c": "Startup, Loan Funds will Open Business",
+      "first_fy": "2000",
+      "last_fy": "2026",
+      "n": 168330
+    },
+    {
+      "c": "Unanswered",
+      "first_fy": "2002",
+      "last_fy": "2026",
+      "n": 78469
+    },
+    {
+      "c": "New Business or 2 years or less",
+      "first_fy": "2018",
+      "last_fy": "2026",
+      "n": 63908
+    },
+    {
+      "c": "Less than 3 years old but at least 2",
+      "first_fy": "2003",
+      "last_fy": "2018",
+      "n": 51574
+    },
+    {
+      "c": "Change of Ownership",
+      "first_fy": "2018",
+      "last_fy": "2026",
+      "n": 50942
+    },
+    {
+      "c": "Less than 5 years old but at least 4",
+      "first_fy": "2001",
+      "last_fy": "2018",
+      "n": 34746
+    },
+    {
+      "c": NaN,
+      "first_fy": "2000",
+      "last_fy": "2022",
+      "n": 2086
+    }
+  ],
+  "chargeoff_amount_over_approval_median": 0.7839851666666667,
+  "load_log": {
+    "loans_in_window": 588049,
+    "cancelled_or_undisbursed": 72622,
+    "missing_numeric_dropped": 0,
+    "analysis_loans": 515427
+  },
+  "by_fy": {
+    "2010": {
+      "loans": 39913,
+      "default5": 0.0497,
+      "ever_charged_off": 0.092,
+      "interest_rate": 6.4515,
+      "median_amount": 100000.0
+    },
+    "2011": {
+      "loans": 45628,
+      "default5": 0.037,
+      "ever_charged_off": 0.0689,
+      "interest_rate": 6.2989,
+      "median_amount": 123350.0
+    },
+    "2012": {
+      "loans": 38889,
+      "default5": 0.033,
+      "ever_charged_off": 0.0627,
+      "interest_rate": 6.2316,
+      "median_amount": 110000.0
+    },
+    "2013": {
+      "loans": 40416,
+      "default5": 0.0311,
+      "ever_charged_off": 0.0599,
+      "interest_rate": 6.1142,
+      "median_amount": 144000.0
+    },
+    "2014": {
+      "loans": 45962,
+      "default5": 0.0356,
+      "ever_charged_off": 0.064,
+      "interest_rate": 6.0369,
+      "median_amount": 116050.0
+    },
+    "2015": {
+      "loans": 55421,
+      "default5": 0.039,
+      "ever_charged_off": 0.0685,
+      "interest_rate": 6.1192,
+      "median_amount": 113500.0
+    },
+    "2016": {
+      "loans": 56789,
+      "default5": 0.0389,
+      "ever_charged_off": 0.0718,
+      "interest_rate": 6.2704,
+      "median_amount": 124000.0
+    },
+    "2017": {
+      "loans": 56079,
+      "default5": 0.0437,
+      "ever_charged_off": 0.0772,
+      "interest_rate": 6.6241,
+      "median_amount": 147000.0
+    },
+    "2018": {
+      "loans": 54195,
+      "default5": 0.047,
+      "ever_charged_off": 0.0789,
+      "interest_rate": 7.2911,
+      "median_amount": 125000.0
+    },
+    "2019": {
+      "loans": 45671,
+      "default5": 0.0396,
+      "ever_charged_off": 0.0669,
+      "interest_rate": 7.909,
+      "median_amount": 150000.0
+    },
+    "2020": {
+      "loans": 36464,
+      "default5": 0.0263,
+      "ever_charged_off": 0.0401,
+      "interest_rate": 6.4577,
+      "median_amount": 200000.0
+    }
+  },
+  "categorical_levels": {
+    "sector": {
+      "72": 67290,
+      "23": 54554,
+      "44": 51098,
+      "54": 50515,
+      "62": 47876,
+      "81": 46111,
+      "42": 26802,
+      "48": 25828,
+      "56": 24180,
+      "33": 20341,
+      "45": 19320,
+      "71": 15170,
+      "53": 11390,
+      "31": 10712,
+      "32": 9493,
+      "52": 9050,
+      "11": 8262,
+      "61": 7161,
+      "51": 6029,
+      "49": 1924,
+      "21": 1442,
+      "22": 460,
+      "55": 329,
+      "92": 88,
+      "unknown": 2
+    },
+    "business_type": {
+      "corporation": 452050,
+      "individual": 53809,
+      "partnership": 9548,
+      "unknown": 20
+    },
+    "business_age": {
+      "existing": 341292,
+      "startup": 77918,
+      "under_2y": 48702,
+      "unanswered": 47515
+    },
+    "processing": {
+      "express": 245759,
+      "preferred_lender": 170254,
+      "pilot_initiative": 48101,
+      "general": 43241,
+      "working_capital_trade": 7973,
+      "other": 99
+    },
+    "fixed_rate": {
+      "0": 403170,
+      "1": 112257
+    },
+    "revolver": {
+      "0": 362773,
+      "1": 152654
+    },
+    "collateral": {
+      "1": 375032,
+      "0": 140395
+    },
+    "franchise": {
+      "0": 467875,
+      "1": 47552
+    },
+    "real_estate_term": {
+      "0": 434847,
+      "1": 80580
+    }
+  },
+  "numeric_ranges": {
+    "log_amount": {
+      "min": 6.9078,
+      "50%": 11.783,
+      "max": 15.4249
+    },
+    "guarantee_share": {
+      "min": 0.1025,
+      "50%": 0.75,
+      "max": 1.0
+    },
+    "interest_rate": {
+      "min": 0.0,
+      "50%": 6.0,
+      "max": 13.5
+    },
+    "term_months": {
+      "min": 0.0,
+      "50%": 88.0,
+      "max": 432.0
+    },
+    "jobs": {
+      "min": 0.0,
+      "50%": 5.0,
+      "max": 2150.0
+    },
+    "log_jobs": {
+      "min": 0.0,
+      "50%": 1.7918,
+      "max": 7.6737
+    }
+  },
+  "never_read": [
+    "BorrName",
+    "BorrStreet",
+    "PaidInFullDate",
+    "FirstDisbursementDate",
+    "SoldSecMrktInd",
+    "BankName",
+    "BankFDICNumber",
+    "BankNCUANumber",
+    "BankStreet",
+    "BankCity",
+    "BankState",
+    "BankZip",
+    "LocationID"
+  ],
+  "outcome_fields_never_inputs": [
+    "LoanStatus",
+    "ChargeOffDate",
+    "GrossChargeOffAmount"
+  ]
+}
