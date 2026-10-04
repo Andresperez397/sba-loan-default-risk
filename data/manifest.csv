@@ -3,3 +3,4 @@ name,url,bytes,sha256,pinned_on
 FOIA_7a_FY2000_FY2009_asof_260630.csv,https://data.sba.gov/sites/default/files/uploaded_resources/FOIA_7a_FY2000_FY2009_asof_260630.csv,318425094,66674e18a700fbba0378c25118c291ac2759784a550c643cab5747eced763d6a,2026-10-04
 FOIA_7a_FY2010_FY2019_asof_260630.csv,https://data.sba.gov/sites/default/files/uploaded_resources/FOIA_7a_FY2010_FY2019_asof_260630.csv,255101999,01a3e2c7988a6f4052e53f218a309feb2ec2fe42887bebdc0fa94ac8b1024ade,2026-10-04
 FOIA_7a_FY2020_Present_asof_260630.csv,https://data.sba.gov/sites/default/files/uploaded_resources/FOIA_7a_FY2020_Present_asof_260630.csv,181130871,6c1e9132b5141a19f82bdc8ccafb86c9a01662461cad41ddb36a3cf409d8a4fe,2026-10-04
+DPRIME.csv,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DPRIME,,f97ae40529e6ea680f21ebf8ab0ed7ec76ae90f4b7ce134daf07721ade00950d,2026-10-04

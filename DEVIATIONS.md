@@ -14,3 +14,7 @@ Every change made after the plan was frozen (commit fb27a17) is logged here, dat
   - **What was seen:** only the results of that single check; no reported result uses term.
   - **Cost:** the real-estate indicator goes with it. The README says so.
 - **2026-10-04, cleaning rule changed:** the planned rule dropped loans with a rate under 2% *or* a term under 1 month. The term part is removed, because those terms are overwrites on charged-off loans (72% charged off), and dropping them would remove defaults. Only the rate rule remains: 443 loans, with a 2.7% charge-off rate, consistent with entry errors.
+- **2026-10-04, added exploratory analysis (Q3), after seeing results:** interest rate as a spread over the prime rate.
+  - **Why:** Q3's stability check flagged the absolute interest rate as the most unstable input. Its PSI between the training cohorts and the test cohorts was 0.82 in FY2018 and 1.62 in FY2019, because the prime rate rose from 3.25% to 5.50%. An absolute rate mixes the lender's price for risk with the market rate level.
+  - **What it does:** the check replaces the rate with its spread over the Wall Street Journal prime rate on the approval date (FRED series DPRIME, public, no account). It refits the scorecard and the rate-only baseline with the same validation design.
+  - **Labelled:** exploratory. The pre-specified results above are reported unchanged.

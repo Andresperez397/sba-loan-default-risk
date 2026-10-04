@@ -4,6 +4,7 @@ SBA republishes these files every quarter under new names, so this project is pi
 snapshot "as of June 30, 2026". The first run writes data/manifest.csv with each file's size and
 SHA-256; later runs verify every file and stop if anything differs.
 """
+
 from __future__ import annotations
 
 import csv
@@ -20,10 +21,12 @@ ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "data" / "raw"
 MANIFEST = ROOT / "data" / "manifest.csv"
 BASE = "https://data.sba.gov/sites/default/files/uploaded_resources"
-FILES = ["7a_504_foia_data_dictionary.xlsx",
-         "FOIA_7a_FY2000_FY2009_asof_260630.csv",
-         "FOIA_7a_FY2010_FY2019_asof_260630.csv",
-         "FOIA_7a_FY2020_Present_asof_260630.csv"]
+FILES = [
+    "7a_504_foia_data_dictionary.xlsx",
+    "FOIA_7a_FY2000_FY2009_asof_260630.csv",
+    "FOIA_7a_FY2010_FY2019_asof_260630.csv",
+    "FOIA_7a_FY2020_Present_asof_260630.csv",
+]
 
 
 def sha256(path: Path) -> str:
@@ -48,6 +51,15 @@ def download(url: str, dest: Path) -> None:
     tmp.rename(dest)
 
 
+PRIME_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DPRIME"
+
+
+def prime_fingerprint(path: Path) -> str:
+    """FRED appends a row every day, so pin only the dates this project uses (FY2009-FY2021)."""
+    lines = [ln for ln in path.read_text().splitlines()[1:] if "2008-10-01" <= ln[:10] <= "2021-09-30"]
+    return hashlib.sha256("\n".join(lines).encode()).hexdigest()
+
+
 def main() -> None:
     RAW.mkdir(parents=True, exist_ok=True)
     rows = []
@@ -56,8 +68,14 @@ def main() -> None:
         if not dest.exists():
             print("downloading", name, flush=True)
             download(f"{BASE}/{name}", dest)
-        rows.append({"name": name, "url": f"{BASE}/{name}", "bytes": dest.stat().st_size,
-                     "sha256": sha256(dest)})
+        rows.append(
+            {"name": name, "url": f"{BASE}/{name}", "bytes": dest.stat().st_size, "sha256": sha256(dest)}
+        )
+    prime = RAW / "DPRIME.csv"
+    if not prime.exists():
+        print("downloading DPRIME.csv", flush=True)
+        download(PRIME_URL, prime)
+    rows.append({"name": "DPRIME.csv", "url": PRIME_URL, "bytes": "", "sha256": prime_fingerprint(prime)})
     if not MANIFEST.exists() or "--repin" in sys.argv:
         for r in rows:
             r["pinned_on"] = date.today().isoformat()
