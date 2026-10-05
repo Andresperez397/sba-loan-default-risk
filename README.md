@@ -1,5 +1,7 @@
 # Small-business loan default: a scorecard tested the way a lender would use it
 
+[![tests](https://github.com/Andresperez397/sba-loan-default-risk/actions/workflows/ci.yml/badge.svg)](https://github.com/Andresperez397/sba-loan-default-risk/actions/workflows/ci.yml)
+
 Can a transparent credit scorecard predict which SBA 7(a) small-business loans will be charged off early, for loans approved *after* the model was built? And does it beat the lender's own price for risk, the interest rate?
 
 The project follows the workflow of a bank's credit-risk and model-validation team:
@@ -92,7 +94,7 @@ The first pipeline check gave an AUC of 0.89 for the scorecard and 0.95 for boos
 5. **Engineering:**
    - DuckDB for the 1.6M-row source files
    - pinned requirements, with data pinned by SHA-256
-   - `ruff` and 10 `pytest` tests (leakage, harmonization, held-out outcome corruption, points-to-probability reproduction, policy-curve logic).
+   - `ruff` and 10 `pytest` tests (leakage, harmonization, held-out outcome corruption, points-to-probability reproduction, policy-curve logic). CI runs the lint and the 9 tests that don't need the raw data on every push.
 
 ## The app
 
