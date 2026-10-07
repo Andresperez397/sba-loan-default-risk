@@ -2,6 +2,14 @@
 
 [![tests](https://github.com/Andresperez397/sba-loan-default-risk/actions/workflows/ci.yml/badge.svg)](https://github.com/Andresperez397/sba-loan-default-risk/actions/workflows/ci.yml)
 
+## At a glance
+
+- **Question:** Can a transparent credit scorecard predict early default on SBA small-business loans approved after the model was built, and does it beat the lender's own price for risk?
+- **Answer:** Modestly. The scorecard's AUC on later loans is 0.684, ahead of gradient boosting (0.677) and the interest rate alone (0.632), but only 0.010 ahead of the rate's spread over prime. The audit caught a leak (loan term, AUC 0.86 on its own) before any result was reported.
+- **Why it matters:** It shows the workflow of a bank's model-validation team: out-of-time validation, a leak found early, policy economics and ongoing monitoring.
+- **Start here:** [Live app](https://andresperez397-sba-loan-default-risk.share.connect.posit.cloud) · [two-page summary](reports/Small-Business%20Loan%20Default%20-%20Summary.pdf)
+
+
 Can a transparent credit scorecard predict which SBA 7(a) small-business loans will be charged off early, for loans approved *after* the model was built? And does it beat the lender's own price for risk, the interest rate?
 
 The project follows the workflow of a bank's credit-risk and model-validation team:
